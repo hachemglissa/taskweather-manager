@@ -8,3 +8,10 @@ class Task(Base):
     title = Column(String, index=True)
     completed = Column(Boolean, default=False)
     weather = Column(String, nullable=True)
+
+class User(Base):
+    __tablename__ = "users"
+
+    id = Column(Integer, primary_key=True, index=True)
+    username = Column(String, unique=True, index=True)
+    password = Column(String)
